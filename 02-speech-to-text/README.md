@@ -68,4 +68,4 @@ completes and memory is released — **not** a WER or throughput benchmark.
 
 ---
 
-**Status:** verified against [bitdeep/whisper-asr-stack@`e38d57f`](https://github.com/bitdeep/whisper-asr-stack/commit/e38d57f) · 2026-09-13 · lifecycle fixes covered by regression tests; handoff timings from a functional smoke, not a benchmark.
+**Status:** verified against [bitdeep/whisper-asr-stack@`4fd89e7`](https://github.com/bitdeep/whisper-asr-stack/commit/4fd89e7) · 2026-09-13 · lifecycle fixes covered by regression tests; handoff timings from a functional smoke, not a benchmark.

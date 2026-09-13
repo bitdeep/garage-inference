@@ -22,3 +22,9 @@ chapter here in the same change — this log records when and why.
   `gpu-worker-orchestrator@b092462`.
 - Honest gaps stay explicit per chapter: RTF benchmarks, analytical VRAM
   budget for synthesis, isolated transition timings.
+- Cross-links published in the stack READMEs (vllm, whisper, chatterbox):
+  each now points back to its book chapter, and
+  `scripts/check-freshness.sh` compares every chapter's pinned commit with
+  the stack's published HEAD. All four chapters rechecked at the current
+  HEADs — the commits in between were docs-only; no behavior, defaults or
+  numbers changed.

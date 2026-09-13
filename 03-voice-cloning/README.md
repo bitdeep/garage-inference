@@ -64,4 +64,4 @@ a single owner sequences the transitions (chapter 04).
 
 ---
 
-**Status:** verified against [bitdeep/chatterbox-ptbr-server@`f5b659f`](https://github.com/bitdeep/chatterbox-ptbr-server/commit/f5b659f) · 2026-09-13 · timings from a functional smoke; analytical VRAM budget pending.
+**Status:** verified against [bitdeep/chatterbox-ptbr-server@`e15ef6c`](https://github.com/bitdeep/chatterbox-ptbr-server/commit/e15ef6c) · 2026-09-13 · timings from a functional smoke; analytical VRAM budget pending.

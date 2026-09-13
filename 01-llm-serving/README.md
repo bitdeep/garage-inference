@@ -77,4 +77,4 @@ live in the stack repo:
 
 ---
 
-**Status:** verified against [bitdeep/vllm-serving-stack@`4fd66ed`](https://github.com/bitdeep/vllm-serving-stack/commit/4fd66ed) · 2026-09-13 · numbers recomputed from pinned calculator, not measured on silicon (that is your Step 4).
+**Status:** verified against [bitdeep/vllm-serving-stack@`0338342`](https://github.com/bitdeep/vllm-serving-stack/commit/0338342) · 2026-09-13 · numbers recomputed from pinned calculator, not measured on silicon (that is your Step 4).

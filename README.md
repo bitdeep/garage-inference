@@ -30,6 +30,7 @@ Each chapter links to the exact commit it was verified against. Quantitative bud
 ## How this book stays alive
 
 - Every shipped chapter ends with a **status line**: the stack commit and date it was verified against.
+- `scripts/check-freshness.sh` compares each pinned commit with the stack's published HEAD. Drift is a prompt to review, not an error: docs-only commits don't invalidate a chapter; behavior, default or number changes trigger the chapter update.
 - A change to a stack that alters behavior, defaults or measured numbers updates its chapter in the same change, with a [CHANGELOG](CHANGELOG.md) entry. Description drift is treated as a bug.
 - Skeletons are labeled as skeletons. No chapter ships numbers that were not recomputed or measured for it.
 

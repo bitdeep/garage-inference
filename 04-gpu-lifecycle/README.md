@@ -79,4 +79,4 @@ engine. Functional evidence of correct sequencing — not a benchmark.
 
 ---
 
-**Status:** verified against [bitdeep/gpu-worker-orchestrator@`b092462`](https://github.com/bitdeep/gpu-worker-orchestrator/commit/b092462) (SDK 0.1.1) · 2026-09-13 · transition timings from a functional smoke; isolated per-model measurements pending.
+**Status:** verified against [bitdeep/gpu-worker-orchestrator@`1ca820e`](https://github.com/bitdeep/gpu-worker-orchestrator/commit/1ca820e) (SDK 0.1.2; smoke ran on 0.1.1) · 2026-09-13 · transition timings from a functional smoke; isolated per-model measurements pending.
