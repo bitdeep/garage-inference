@@ -30,6 +30,10 @@ lifecycle discipline, measured.
   *before* acquiring the synthesis lock — avoiding recursive acquisition.
   Heavy voices yield before ASR; unload failure stops the synthesis path
   instead of stacking another model on a card that may not have room.
+- **Request parameters stay requests.** An app-requested `voice` overrides
+  the engine's configured default, and the response reports the voice
+  actually sent; engine defaults apply only when the request is silent
+  (SDK 0.1.3).
 
 ```
 App → SDK: synthesize(reference_audio)
@@ -79,4 +83,4 @@ engine. Functional evidence of correct sequencing — not a benchmark.
 
 ---
 
-**Status:** verified against [bitdeep/gpu-worker-orchestrator@`1ca820e`](https://github.com/bitdeep/gpu-worker-orchestrator/commit/1ca820e) (SDK 0.1.2; smoke ran on 0.1.1) · 2026-09-13 · transition timings from a functional smoke; isolated per-model measurements pending.
+**Status:** verified against [bitdeep/gpu-worker-orchestrator@`fb584c2`](https://github.com/bitdeep/gpu-worker-orchestrator/commit/fb584c2) (SDK 0.1.3; handoff smoke ran on 0.1.1) · 2026-09-13 · transition timings from a functional smoke; isolated per-model measurements pending.

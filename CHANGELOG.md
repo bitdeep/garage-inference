@@ -28,3 +28,8 @@ chapter here in the same change — this log records when and why.
   the stack's published HEAD. All four chapters rechecked at the current
   HEADs — the commits in between were docs-only; no behavior, defaults or
   numbers changed.
+- First living-loop cycle completed end to end: the SDK shipped
+  [v0.1.3](https://github.com/bitdeep/gpu-worker-orchestrator/releases/tag/v0.1.3)
+  (requested `voice` now overrides the engine default, with tests), the
+  orchestrator README linked chapter 04, and this book recorded the
+  behavior change in the same session.
