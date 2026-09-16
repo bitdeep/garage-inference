@@ -25,6 +25,8 @@ Every chapter is written from stacks that actually run — the same Docker Compo
 - [bitdeep/chatterbox-ptbr-server](https://github.com/bitdeep/chatterbox-ptbr-server) — Chatterbox Multilingual voice cloning for Brazilian Portuguese.
 - [bitdeep/gpu-worker-orchestrator](https://github.com/bitdeep/gpu-worker-orchestrator) — the TypeScript SDK that owns the GPU lifecycle across all of the above.
 
+The models these stacks run — Qwen3-8B, faster-whisper, Chatterbox pt-BR, Kokoro and Qwen3-TTS — are collected on [Hugging Face](https://huggingface.co/collections/bitdeep/garage-inference-self-hosted-ai-on-one-24-gb-gpu), each with a note pointing back to its stack and chapter.
+
 Each chapter links to the exact commit it was verified against. Quantitative budgets are computed with the open-source [ai-infra-book calculator](https://github.com/bojieli/ai-infra-book) — pure Python, no GPU needed — and every number in this book can be recomputed from the pinned commands we publish.
 
 ## How this book stays alive

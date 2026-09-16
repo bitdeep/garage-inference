@@ -4,6 +4,14 @@ The book is a description surface of the stacks it teaches. Every change to
 a stack that alters behavior, defaults or numbers updates the matching
 chapter here in the same change — this log records when and why.
 
+## 2026-09-16
+
+- Models the stacks run (Qwen3-8B, faster-whisper small and large-v3,
+  Chatterbox pt-BR, Kokoro, Qwen3-TTS) published as a
+  [Hugging Face collection](https://huggingface.co/collections/bitdeep/garage-inference-self-hosted-ai-on-one-24-gb-gpu),
+  each note linking back to its stack and chapter; linked from the README.
+  Docs-only: no chapter, default or number changed.
+
 ## 2026-09-13
 
 - Book created. Method chapter (00) and LLM serving chapter (01) shipped.
