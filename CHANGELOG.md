@@ -4,6 +4,13 @@ The book is a description surface of the stacks it teaches. Every change to
 a stack that alters behavior, defaults or numbers updates the matching
 chapter here in the same change — this log records when and why.
 
+## 2026-10-20
+
+- Chapter 04 now describes the optional resident engine pair in SDK 0.1.5,
+  revision `539f365`. Audio can advance during LLM generation. Model
+  lifecycle operations remain exclusive. The chapter separates the new
+  contract tests from the older functional smoke timings.
+
 ## 2026-09-16
 
 - Models the stacks run (Qwen3-8B, faster-whisper small and large-v3,

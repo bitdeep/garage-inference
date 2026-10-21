@@ -18,9 +18,9 @@ lifecycle discipline, measured.
 
 ## The design: one owner, one lock
 
-- **Every GPU operation goes through one process-local queue** — chat,
+- **Every GPU operation goes through one process-local admission controller** — chat,
   transcription, synthesis, idle sweeps, batch jobs. A failed request
-  releases the queue, so one crash cannot wedge the card.
+  releases its lease. Operations are exclusive by default.
 - **The idle timer shares the lock with generation.** An idle unload
   cannot interrupt a long generation halfway, because the sweep cannot
   run while a request holds the lock. (Without this, your power-saving
@@ -34,6 +34,29 @@ lifecycle discipline, measured.
   the engine's configured default, and the response reports the voice
   actually sent; engine defaults apply only when the request is silent
   (SDK 0.1.3).
+
+### Continuous audio with a resident LLM
+
+SDK 0.1.5 adds an explicit mode for two resident engines. Set
+`residentGpuOperations: ["llm", "stream"]`. Submit each audio step with
+`withGpuLock("stream", step, { resident: true })`.
+
+The controller permits one operation per label and at most two different
+labels at once. An audio step can run while the LLM generates its response.
+The LLM prepares its engine under an exclusive lease. It then converts that
+lease without releasing ownership. This prevents an idle unload between
+readiness and generation. Model loading, unloading and other operations
+remain exclusive.
+
+Enable this mode only after both models fit in GPU memory and the combined
+workload passes a test on the target card. This controls admission. It does
+not preempt CUDA kernels or guarantee a response deadline.
+
+The regression test reproduced audio waiting for the entire LLM response
+under the old lock. The new mode admits the audio before that response
+finishes. Tests also cover exclusive maintenance, label limits, cancellation
+and lease release after failure. These are contract tests, not a throughput
+benchmark.
 
 ```
 App → SDK: synthesize(reference_audio)
@@ -83,4 +106,4 @@ engine. Functional evidence of correct sequencing — not a benchmark.
 
 ---
 
-**Status:** verified against [bitdeep/gpu-worker-orchestrator@`fb584c2`](https://github.com/bitdeep/gpu-worker-orchestrator/commit/fb584c2) (SDK 0.1.3; handoff smoke ran on 0.1.1) · 2026-09-13 · transition timings from a functional smoke; isolated per-model measurements pending.
+**Status:** verified against [bitdeep/gpu-worker-orchestrator@`539f365`](https://github.com/bitdeep/gpu-worker-orchestrator/commit/539f365) (SDK 0.1.5; 68 tests passed) · 2026-10-20. The handoff timings above come from the SDK 0.1.1 functional smoke. They do not measure the new resident mode.
